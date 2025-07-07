@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,73 +8,47 @@ namespace _28lab2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
 
-        }
-        protected void CheckTextBox2Value()
+        protected void CalculateOperation(object sender, CommandEventArgs e)
         {
-            if (int.TryParse(TextBox2.Text, out int value2) && value2 == 0)
-            {
-                TextBox2.BackColor = System.Drawing.Color.Red;  
-                Button5.Enabled = false;                        
-            }
+            string input1 = TextBox1.Text;
+            string input2 = TextBox2.Text;
+            TextBox3.Text = "";
 
-        }
-        protected void addition(object sender, EventArgs e)
-        {
-            string input1 = TextBox1.Text;
-            string input2 = TextBox2.Text;
-            TextBox3.Text = "";
             if (int.TryParse(input1, out int value1) && int.TryParse(input2, out int value2))
             {
-                int sum = value1 + value2;
-                TextBox3.Text = sum.ToString(); 
-            }
-            else
-            {
-                TextBox3.Text = "Invalid input";
-            }
-        }
-        protected void subtraction(object sender, EventArgs e)
-        {
-            string input1 = TextBox1.Text;
-            string input2 = TextBox2.Text;
-            TextBox3.Text = "";
-            if (int.TryParse(input1, out int value1) && int.TryParse(input2, out int value2))
-            {
-                int sum = value1 - value2;
-                TextBox3.Text = sum.ToString(); 
-            }
-            else
-            {
-                TextBox3.Text = "Invalid input";
-            }
-        }
-        protected void multiplication(object sender, EventArgs e)
-        {
-            string input1 = TextBox1.Text;
-            string input2 = TextBox2.Text;
-            TextBox3.Text = "";
-            if (int.TryParse(input1, out int value1) && int.TryParse(input2, out int value2))
-            {
-                int sum = value1 * value2;
-                TextBox3.Text = sum.ToString();
-            }
-            else
-            {
-                TextBox3.Text = "Invalid input";
-            }
-        }
-        protected void division(object sender, EventArgs e)
-        {
-            
-            string input1 = TextBox1.Text;
-            string input2 = TextBox2.Text;
-            TextBox3.Text = "";
-            if (int.TryParse(input1, out int value1) && int.TryParse(input2, out int value2))
-            {
+                try
+                {
+                    int result = 0;
 
-                int sum = value1 / value2;
-                TextBox3.Text = sum.ToString(); 
+                    switch (e.CommandArgument.ToString())
+                    {
+                        case "add":
+                            result = value1 + value2;
+                            break;
+                        case "subtract":
+                            result = value1 - value2;
+                            break;
+                        case "multiply":
+                            result = value1 * value2;
+                            break;
+                        case "divide":
+                            if (value2 == 0)
+                            {
+                                TextBox3.Text = "Cannot divide by zero";
+                                return;
+                            }
+                            result = value1 / value2;
+                            break;
+                    }
+
+                    TextBox3.Text = result.ToString();
+                }
+                catch (Exception ex)
+                {
+                    TextBox3.Text = "Error: " + ex.Message;
+                }
             }
             else
             {
