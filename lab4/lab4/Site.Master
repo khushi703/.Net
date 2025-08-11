@@ -1,0 +1,35 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="YourNamespace.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Master Page Example</title>
+    <style>
+        body { font-family: Arial; margin: 0; }
+        .header { background-color: #333; color: white; padding: 10px; text-align: center; }
+        .footer { background-color: #333; color: white; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; }
+        .container { display: flex; min-height: calc(100vh - 80px); }
+        .left { width: 200px; background: #eee; padding: 15px; }
+        .right { flex: 1; padding: 15px; }
+        a { text-decoration: none; display: block; padding: 5px 0; }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-color:lightgray;padding:10px;">
+            <h2>Header Area</h2>
+        </div>
+        <div style="display:flex;">
+            <div style="width:200px;background-color:lightblue;padding:10px;">
+                Left Panel Content
+            </div>
+            <div style="flex:1;padding:10px;">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+        <div style="background-color:lightgray;padding:10px;">
+            Footer Area
+        </div>
+    </form>
+</body>
+</html>
