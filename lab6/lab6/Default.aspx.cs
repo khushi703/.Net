@@ -67,7 +67,7 @@ namespace lab6
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand("DELETE FROM Students WHERE Id=@Id", con);
-                cmd.Parameters.AddWithValue("@Id", 1); // Change to selected row's Id
+                cmd.Parameters.AddWithValue("@Id", 2); // Change to selected row's Id
                 con.Open();
                 cmd.ExecuteNonQuery();
             }
