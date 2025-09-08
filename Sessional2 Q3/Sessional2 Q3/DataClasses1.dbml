@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Q3bDb" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="C_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="C_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Category_Book" Member="Books" ThisKey="C_Id" OtherKey="B_Cat" Type="Book" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="B_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="B_Title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="B_Author" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="B_Cat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Book" Member="Category" ThisKey="B_Cat" OtherKey="C_Id" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
