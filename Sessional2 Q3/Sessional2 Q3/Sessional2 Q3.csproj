@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="q3_a.aspx" />
     <Content Include="q3_b.aspx" />
+    <Content Include="q3_ora.aspx" />
     <Content Include="q3_orb.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="q3_b.aspx.designer.cs">
       <DependentUpon>q3_b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="q3_ora.aspx.cs">
+      <DependentUpon>q3_ora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="q3_ora.aspx.designer.cs">
+      <DependentUpon>q3_ora.aspx</DependentUpon>
     </Compile>
     <Compile Include="q3_orb.aspx.cs">
       <DependentUpon>q3_orb.aspx</DependentUpon>
