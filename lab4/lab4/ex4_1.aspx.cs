@@ -22,7 +22,7 @@ namespace lab4
                 string ext = Path.GetExtension(FileUpload1.FileName).ToLower();
                 int size = FileUpload1.PostedFile.ContentLength;
 
-                if ((ext == ".pdf" || ext == ".docx") && size < 10240) // 10KB
+                if ((ext == ".pdf" || ext == ".docx") && size < 102400) // 10KB
                 {
                     string path = Server.MapPath("~/Uploads/");
                     if (!Directory.Exists(path))

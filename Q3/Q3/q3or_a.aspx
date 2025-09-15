@@ -11,7 +11,13 @@
         <h2>Image Map - Shape Interaction</h2>
 
         <asp:ImageMap ID="imgMap" runat="server" ImageUrl="~/images/shapes.png" HotSpotMode="Navigate" OnClick="imgMap_Click" Width="400px" Height="200px">
-            <asp:RectangleHotSpot Top="150" Left="20" Width="80" Height="30" PostBackValue="Rectangle" AlternateText="Rectangle" />
+            <asp:RectangleHotSpot 
+                Top="150" 
+                Left="20" 
+                Bottom="180" 
+                Right="100" 
+                PostBackValue="Rectangle" 
+                AlternateText="Rectangle" />
             <asp:CircleHotSpot X="300" Y="80" Radius="40" PostBackValue="Circle" AlternateText="Circle" />
             <asp:PolygonHotSpot Coordinates="100,60,120,80,100,100,80,80" PostBackValue="Diamond" AlternateText="Diamond" />
         </asp:ImageMap>
