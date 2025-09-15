@@ -1,9 +1,10 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="q2_a.aspx.cs" Inherits="Sessional2_Q3.q2_1" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Product CRUD</title>
+    <title></title>
 </head>
 <body>
     <form id="form1" runat="server">

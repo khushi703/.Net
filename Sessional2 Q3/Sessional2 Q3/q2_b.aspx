@@ -1,9 +1,10 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="paper.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="q2_b.aspx.cs" Inherits="Sessional2_Q3.q2_b" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Product Management</title>
+    <title></title>
 </head>
 <body>
     <form id="form1" runat="server">

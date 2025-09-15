@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Place Order";
+}
+
+<h2>Place Your Order</h2>
+
+<form method="post" action="/Home/PlaceOrder">
+    <input type="checkbox" name="selectedItems" value="Pen" /> Pen <br />
+    <input type="checkbox" name="selectedItems" value="Pencil" /> Pencil <br />
+    <input type="checkbox" name="selectedItems" value="Eraser" /> Eraser <br />
+    <input type="checkbox" name="selectedItems" value="Notebook" /> Notebook <br />
+    <input type="checkbox" name="selectedItems" value="Marker" /> Marker <br />
+
+    <br />
+    <button type="submit">Place Order</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:@(ViewBag.Message.Contains("⚠️") ? "red" : "green")">
+        @ViewBag.Message
+    </p>
+}

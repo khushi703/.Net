@@ -1,13 +1,17 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace WebApplication1
+namespace Sessional2_Q3
 {
-    public partial class WebForm1 : Page
+    public partial class q2_1 : System.Web.UI.Page
     {
-        string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+        string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ProductDbConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +26,7 @@ namespace WebApplication1
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Products (p_Name, p_Cost) VALUES (@Name, @Cost)";
+                string query = "INSERT INTO Product (P_Name, P_Cost) VALUES (@Name, @Cost)";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", txtName.Text);
                 cmd.Parameters.AddWithValue("@Cost", Convert.ToDecimal(txtCost.Text));
@@ -39,7 +43,7 @@ namespace WebApplication1
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Products SET p_Name=@Name, p_Cost=@Cost WHERE p_id=@Id";
+                string query = "UPDATE Product SET P_Name=@Name, P_Cost=@Cost WHERE P_Id=@Id";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(txtId.Text));
                 cmd.Parameters.AddWithValue("@Name", txtName.Text);
@@ -57,7 +61,7 @@ namespace WebApplication1
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM Products WHERE p_id=@Id";
+                string query = "DELETE FROM Product WHERE P_Id=@Id";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(txtId.Text));
 
@@ -79,7 +83,7 @@ namespace WebApplication1
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Products";
+                string query = "SELECT * FROM Product";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
 
                 DataSet ds = new DataSet();

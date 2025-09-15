@@ -68,6 +68,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="q2_a.aspx" />
+    <Content Include="q2_b.aspx" />
     <Content Include="q2_c.aspx" />
     <Content Include="q3_a.aspx" />
     <Content Include="q3_b.aspx" />
@@ -76,6 +78,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductDAL.cs" />
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +90,20 @@
       <DependentUpon>ProductData.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="q2_a.aspx.cs">
+      <DependentUpon>q2_a.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="q2_a.aspx.designer.cs">
+      <DependentUpon>q2_a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="q2_b.aspx.cs">
+      <DependentUpon>q2_b.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="q2_b.aspx.designer.cs">
+      <DependentUpon>q2_b.aspx</DependentUpon>
+    </Compile>
     <Compile Include="q2_c.aspx.cs">
       <DependentUpon>q2_c.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

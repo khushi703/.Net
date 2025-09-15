@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Admin - Retrieve Orders";
+}
+
+<h2>All Orders</h2>
+
+<form method="post" action="/Admin/RetrieveOrders">
+    <textarea rows="10" cols="60" readonly>@ViewBag.AllOrders</textarea><br /><br />
+    <button type="submit">Retrieve Orders</button>
+</form>

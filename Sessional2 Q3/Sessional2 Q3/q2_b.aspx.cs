@@ -1,9 +1,13 @@
-using System;
-using paper.DAL;  // reference DAL namespace
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace paper
+namespace Sessional2_Q3
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class q2_b : System.Web.UI.Page
     {
         ProductDAL dal = new ProductDAL();
 
