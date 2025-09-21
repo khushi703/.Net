@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Output Caching Demo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>Server Time (cached for 10 seconds): <strong>@ViewBag.ServerTime</strong></p>
+<p>Client Time (updates live): <strong id="clientTime"></strong></p>
+
+<p>Refresh the page to see server time update only every 10 seconds.</p>
+
+<script>
+    function updateClientTime() {
+        const now = new Date();
+        document.getElementById("clientTime").innerText = now.toLocaleTimeString();
+    }
+
+    // Update immediately
+    updateClientTime();
+
+    // Update every second
+    setInterval(updateClientTime, 1000);
+</script>

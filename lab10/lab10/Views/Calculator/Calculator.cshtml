@@ -1,0 +1,41 @@
+﻿@model lab10.Models.CalculatorModel
+
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Simple Calculator</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Number1)
+        @Html.TextBoxFor(m => m.Number1)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Number2)
+        @Html.TextBoxFor(m => m.Number2)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Operation)
+        @Html.DropDownListFor(m => m.Operation,
+            new SelectList(new[] { "Add", "Subtract", "Multiply", "Divide" }))
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Calculate" />
+    </div>
+}
+
+@if (Model != null)
+{
+    <h3>Result: @Model.Result</h3>
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+    {
+        <p style="color:red">@error.ErrorMessage</p>
+    }
+}
