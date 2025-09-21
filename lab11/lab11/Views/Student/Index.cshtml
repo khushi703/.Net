@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Fetch Student by ID";
+}
+
+<h2>Enter Student ID</h2>
+
+@using (Html.BeginForm("Index", "Student", FormMethod.Post))
+{
+    <input type="number" name="id" required />
+    <input type="submit" value="Fetch Student" />
+}
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:red">@ViewBag.Message</p>
+}

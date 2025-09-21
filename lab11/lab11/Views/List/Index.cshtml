@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "List Example";
+}
+
+<h2>List of Fruits using ViewBag</h2>
+<ul>
+    @if (ViewBag.FruitList != null)
+    {
+        foreach (var fruit in ViewBag.FruitList)
+        {
+            <li>@fruit</li>
+        }
+    }
+    else
+    {
+        <li>No fruits found</li>
+    }
+</ul>
+
+<h2>List of Fruits using ViewData</h2>
+<ul>
+    @{
+        var fruits = ViewData["FruitListData"] as List<string>;
+        if (fruits != null)
+        {
+            foreach (var fruit in fruits)
+            {
+                <li>@fruit</li>
+            }
+        }
+        else
+        {
+            <li>No fruits found</li>
+        }
+    }
+</ul>
